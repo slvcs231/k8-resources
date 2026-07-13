@@ -1,0 +1,7 @@
+apiVersion: v1 
+kind: Namespace
+metadata: 
+  name: roboproject
+  labels:
+    environment:  dev
+    project:  roboproject

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pod-config-demo
+data:
+  course: "Devsecops with AWS"
+  Duration: "120 hrs"
+  Trainer:  "Reddiah"
