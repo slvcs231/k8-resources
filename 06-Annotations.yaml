@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: annotation-demo
   annotations:
-    jenkins.url:  
+    #jenkins.url:  
     imageregistry:  "https://hub.docker.com"
 
 spec:
