@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Service-lb-demo
+  name: Service-load-demo
 spec:
   selector:
     project:  roboshop
