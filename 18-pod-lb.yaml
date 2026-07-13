@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: Service-load-demo
 spec:
-  selector:
+  labels:
     project:  roboshop
     component:  fronend
     environment:  dev
