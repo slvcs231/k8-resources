@@ -4,9 +4,9 @@ metadata:
   name: ebs-static
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: nginx-html
+  volumeName: ebs-static
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 14Gi
+      storage: 15Gi
