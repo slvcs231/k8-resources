@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: ebs-static1
+  name: ebs-static
 spec:
   accessModes:
   - ReadWriteOnce
@@ -17,10 +17,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs-static1
+  name: ebs-static
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: ebs-static1
+  volumeName: nginx-html
   accessModes:
     - ReadWriteOnce
   resources:
@@ -32,20 +32,20 @@ kind: Pod
 metadata:
   name: nginx
   labels:
-    purpose: ebs-static1
+    purpose: ebs-static
 spec:
   containers:
   - name: nginx
     image: nginx
     volumeMounts:
-    - name: nginx-html
+    - name: nginx-html-mnt
       mountPath: /usr/share/nginx/html
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1f
   volumes:
   - name: nginx-html
     persistentVolumeClaim:
-      claimName: ebs-static1
+      claimName: ebs-static
 # ---
 # apiVersion: v1
 # kind: Service
