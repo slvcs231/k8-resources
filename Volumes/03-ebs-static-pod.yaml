@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    purpose: ebs-static
+spec:
+  containers:
+  - name: nginx-pod
+    image: nginx
+    volumeMounts:
+    - name: nginx-html
+      mountPath: /usr/share/nginx/html
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1f
+  volumes:
+  - name: nginx-html
+    persistentVolumeClaim:
+      claimName: ebs-static
+
+
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: nginx-ebs-static
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     purpose: ebs-static
+#   ports:
+#     - protocol: TCP
+#       port: 80 # service port
+#       targetPort: 80 # container port
+#       nodePort: 30007 
