@@ -30,15 +30,15 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: nginx1
   labels:
     purpose: ebs-static
 spec:
   containers:
-  - name: nginx
+  - name: nginx1
     image: nginx
     volumeMounts:
-    - name: nginx-html-mnt
+    - name: nginx-html
       mountPath: /usr/share/nginx/html
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1f
