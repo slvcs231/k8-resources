@@ -1,13 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
-  name: nginx-Deployment
+  name: nginx-deployment
   labels:
     purpose: dp-demo
     project: roboshop
 
 spec:
   replicas: 5
+
   selector:
     matchLabels:
       purpose: dp-demo
@@ -16,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        purpose: res-demo
+        purpose: dp-demo
         project: roboshop
 
     spec:
