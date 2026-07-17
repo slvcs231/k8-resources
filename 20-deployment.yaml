@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    purpose: res-demo
+    purpose: dp-demo
     project: roboshop
 
 spec:
-  replicas: 10
+  replicas: 5
   selector:
     matchLabels:
-      purpose: res-demo
+      purpose: dp-demo
       project: roboshop
 
   template:
